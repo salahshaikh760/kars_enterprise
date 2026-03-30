@@ -1,0 +1,657 @@
+<?php include 'db_connect.php'; ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>KARS ENTERPRISE | RENTAL</title>
+    <style>
+      /* Quick Fade-In for Smooth Entry */
+      body {
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Button Hover Enhancement */
+      .btn {
+        background-color: #f5b700;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        padding: 10px 22px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #ffcc33;
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      /* Smooth scroll behavior for internal links */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="#">KARS ENTERPRISE</a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#rent">Rent</a></li>
+          <li><a href="#ride">Ride</a></li>
+          <li><a href="#reviews-contact">Reviews</a></li>
+        </ul>
+
+        <div class="nav__btn">
+          <a href="login.html">
+            <button class="btn">Get Started</button>
+          </a>
+        </div>
+      </nav>
+
+      <div class="header__container" id="home">
+        <h1>Your key to the open road</h1>
+        <img src="assets/header.png" alt="header" />
+      </div>
+
+      <a href="#about" class="scroll__down">
+        <i class="ri-arrow-down-line"></i>
+      </a>
+    </header>
+  
+    <section class="section__container range__container" id="about">
+      <h2 class="section__header">WIDE RANGE OF VEHICLES</h2>
+      <div class="range__grid">
+        <div class="range__card">
+          <img src="assets/range-1.jpg" alt="range" />
+          <div class="range__details">
+            <h4>CARS</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+        <div class="range__card">
+          <img src="assets/range-2.jpg" alt="range" />
+          <div class="range__details">
+            <h4>SUVS</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+        <div class="range__card">
+          <img src="assets/range-3.jpg" alt="range" />
+          <div class="range__details">
+            <h4>VANS</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+        <div class="range__card">
+          <img src="assets/range-4.jpg" alt="range" />
+          <div class="range__details">
+            <h4>ELECTRIC</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="why-choose-us">
+  <div style="flex:1 1 400px;text-align:center;">
+    <img src="assets/CAR.png" alt="Why Choose Us">
+  </div>
+
+  <div style="flex:1 1 500px;padding:20px;">
+    <h2>Why Choose Us</h2>
+    <p>We are committed to delivering a seamless car rental experience with trusted service, unmatched convenience, and premium quality. Here’s why travelers choose us:</p>
+    
+    <div class="feature-grid">
+      <div class="feature-box">
+        <h3>Customer Support</h3>
+        <p>Our dedicated support team is available around the clock to assist you.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Many Locations</h3>
+        <p>Easily pick up and drop off your car at multiple convenient locations.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Best Price</h3>
+        <p>Get the most competitive prices and the best value for your rental.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Experienced Drivers</h3>
+        <p>Travel confidently with our professional and reliable drivers.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Verified Brands</h3>
+        <p>Choose from a range of trusted and well-maintained car brands.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Free Cancellations</h3>
+        <p>Enjoy flexible bookings with free cancellation options.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn">Book Your Car Now</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Body */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fffdea, #f5ffe5);
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  /* Section Animation */
+  @keyframes fadeInUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
+  @keyframes zoomIn { from {opacity:0; transform:scale(0.9);} to {opacity:1; transform:scale(1);} }
+  @keyframes slideLeft { from {opacity:0; transform:translateX(50px);} to {opacity:1; transform:translateX(0);} }
+
+  /* Why Choose Us Section */
+  #why-choose-us {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #fffdea, #e8ffe0);
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  #why-choose-us img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    transition: transform 0.6s ease, filter 0.6s ease;
+    animation: zoomIn 1.5s ease forwards;
+  }
+  #why-choose-us img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+  }
+
+  #why-choose-us h2 {
+    font-size: 42px;
+    color: #3e5d24; /* Dark Green */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideLeft 1.2s ease forwards;
+  }
+
+  #why-choose-us p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    animation: slideLeft 1.5s ease forwards;
+  }
+
+  /* Feature Cards */
+  .feature-box {
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #fffdea, #f7ffd8);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,211,0,0.2) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+  }
+
+  .feature-box:hover::before {
+    transform: scale(1);
+  }
+
+  .feature-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  }
+
+  .feature-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #3e5d24;
+  }
+
+  .feature-box p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* Button */
+  #why-choose-us button {
+    background: #d4a900; /* Dark Yellow */
+    color: #fff;
+    font-size: 18px;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-weight: 600;
+  }
+
+  #why-choose-us button:hover {
+    background: #ffdd33; /* Light Yellow */
+    transform: scale(1.1);
+    color: #000;
+  }
+
+  /* Grid */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  /* Responsive */
+  @media(max-width:900px){
+    #why-choose-us {
+      padding: 60px 5%;
+    }
+    #why-choose-us img {
+      margin-bottom: 30px;
+    }
+  }
+</style>
+
+
+<section class="select__container" id="ride" style="position:relative;padding:100px 20px;background:linear-gradient(135deg,#ffffff,#f8ffe6,#eaffdf);overflow:hidden;">
+  <div style="text-align:center;margin-bottom:50px;position:relative;">
+    <h2 class="section__header" style="font-size:38px;text-transform:uppercase;color:#2a2a2a;position:relative;display:inline-block;">
+      PICK YOUR DREAM CAR TODAY
+      <span class="heading-line"></span>
+      <span class="heading-arrow">➤</span>
+    </h2>
+  </div>
+
+  <div class="swiper" style="padding-bottom:50px;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="select__card">
+          <div class="car-image-container">
+            <img src="assets/select-1.png" alt="select" />
+          </div>
+          <div class="select__info">
+            <div class="select__info__card"><span><i class="ri-speed-up-line"></i></span><h4>200 <span>km/h</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-settings-5-line"></i></span><h4>6 <span>speed</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-roadster-line"></i></span><h4>5 <span>seats</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-signpost-line"></i></span><h4>15 <span>milage</span></h4></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="select__card">
+          <div class="car-image-container">
+            <img src="assets/select-2.png" alt="select" />
+          </div>
+          <div class="select__info">
+            <div class="select__info__card"><span><i class="ri-speed-up-line"></i></span><h4>215 <span>km/h</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-settings-5-line"></i></span><h4>6 <span>speed</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-roadster-line"></i></span><h4>5 <span>seats</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-signpost-line"></i></span><h4>16 <span>milage</span></h4></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="select__card">
+          <div class="car-image-container">
+            <img src="assets/select-3.png" alt="select" />
+          </div>
+          <div class="select__info">
+            <div class="select__info__card"><span><i class="ri-speed-up-line"></i></span><h4>306 <span>km/h</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-settings-5-line"></i></span><h4>6 <span>speed</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-roadster-line"></i></span><h4>5 <span>seats</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-signpost-line"></i></span><h4>12 <span>milage</span></h4></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="select__card">
+          <div class="car-image-container">
+            <img src="assets/select-4.png" alt="select" />
+          </div>
+          <div class="select__info">
+            <div class="select__info__card"><span><i class="ri-speed-up-line"></i></span><h4>350 <span>km/h</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-settings-5-line"></i></span><h4>6 <span>speed</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-roadster-line"></i></span><h4>2 <span>seats</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-signpost-line"></i></span><h4>08 <span>milage</span></h4></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="select__card">
+          <div class="car-image-container">
+            <img src="assets/select-5.png" alt="select" />
+          </div>
+          <div class="select__info">
+            <div class="select__info__card"><span><i class="ri-speed-up-line"></i></span><h4>254 <span>km/h</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-settings-5-line"></i></span><h4>6 <span>speed</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-roadster-line"></i></span><h4>5 <span>seats</span></h4></div>
+            <div class="select__info__card"><span><i class="ri-signpost-line"></i></span><h4>10 <span>milage</span></h4></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form action="/" class="select__form" style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px;">
+    <div class="select__price" style="font-size:20px;font-weight:600;color:#3c8c3c;display:flex;align-items:center;gap:10px;">
+      <span><i class="ri-price-tag-3-line"></i></span>
+      <div><span id="select-price">225</span> /day</div>
+    </div>
+    <div class="select__btns" style="display:flex;gap:15px;">
+      <button class="btn" style="background:#3c8c3c;color:#fff;padding:14px 26px;border:none;border-radius:12px;font-weight:600;cursor:pointer;transition:0.3s;">View Details</button>
+      <a href="https://www.whatsapp.com/download?lang=en" class="btn" style="background:#ffdd33;color:#000;padding:14px 26px;border:none;border-radius:12px;font-weight:600;cursor:pointer;transition:0.3s;">Rent Now</a>
+    </div>
+  </form>
+</section>
+
+<style>
+  /* Animation under heading */
+  .heading-line {
+    position:absolute;
+    bottom:-8px;
+    left:0;
+    height:3px;
+    width:0;
+    background:linear-gradient(90deg,#5daa64,#d4a900);
+    border-radius:4px;
+    animation:none;
+  }
+  .heading-arrow {
+    opacity:0;
+    font-size:22px;
+    color:#5daa64;
+    position:absolute;
+    bottom:-20px;
+    right:-25px;
+    transition:all 0.4s ease;
+  }
+  .select__card {
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:transform 0.4s ease, box-shadow 0.4s ease;
+    animation:fadeUp 1s ease forwards;
+  }
+  .select__card:hover {
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  }
+  .car-image-container {
+    position:relative;
+    overflow:hidden;
+  }
+  .car-image-container::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:-75%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(120deg,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0.2) 100%);
+    transform:skewX(-25deg);
+  }
+  .select__card:hover .car-image-container::after {
+    animation:shine 1s ease forwards;
+  }
+  @keyframes shine {
+    from { left:-75%; }
+    to { left:125%; }
+  }
+  @keyframes fadeUp { from {opacity:0;transform:translateY(50px);} to {opacity:1;transform:translateY(0);} }
+  @keyframes lineGrow { from {width:0;} to {width:100%;} }
+  @keyframes arrowSlide { from {opacity:0;transform:translateX(-10px);} to {opacity:1;transform:translateX(5px);} }
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.section__header');
+    const line = document.querySelector('.heading-line');
+    const arrow = document.querySelector('.heading-arrow');
+    const rect = header.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 100) {
+      line.style.animation = 'lineGrow 1.8s ease-out forwards';
+      arrow.style.opacity = '1';
+      arrow.style.animation = 'arrowSlide 1s ease-out forwards';
+    }
+  });
+</script>
+
+
+<section id="reviews-contact" style="position:relative;overflow:hidden;padding:60px 20px;background:linear-gradient(135deg,#fffde0,#f4fff0,#e6ffdb);color:#000;">
+
+  <style>
+    @keyframes drive {
+      0% { left:-150px; transform:rotate(0deg);}
+      50% { transform:rotate(5deg);}
+      100% { left:100%; transform:rotate(0deg);}
+    }
+    @keyframes fadeUp { from{opacity:0; transform:translateY(50px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+
+  <h2 style="text-align:center;font-size:38px;margin-bottom:40px;text-transform:uppercase;letter-spacing:1px;animation:fadeUp 1s ease forwards;">What Our Users Say</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-bottom:60px;">
+    <div style="padding:25px;border-radius:15px;background:linear-gradient(145deg,#fffde0,#fff9b0);box-shadow:0 4px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;animation:fadeUp 1.1s ease forwards;"
+         onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.boxShadow='0 12px 25px rgba(0,0,0,0.15)';" 
+         onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+      <p style="font-size:16px;color:#444;line-height:1.7;">“The car was spotless, the pickup was seamless, and the staff was super friendly. Highly recommend Premium Car Rental!”</p>
+      <h4 style="margin-top:20px;font-size:18px;font-weight:700;color:#d4a900;">– Riya Sharma</h4>
+      <p style="color:#f5a623;font-size:20px;">★★★★★</p>
+    </div>
+
+    <div style="padding:25px;border-radius:15px;background:linear-gradient(145deg,#fffde0,#fff9b0);box-shadow:0 4px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;animation:fadeUp 1.2s ease forwards;"
+         onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.boxShadow='0 12px 25px rgba(0,0,0,0.15)';" 
+         onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+      <p style="font-size:16px;color:#444;line-height:1.7;">“Affordable pricing and top-notch cars! Booking online was super easy, and the entire experience was stress-free.”</p>
+      <h4 style="margin-top:20px;font-size:18px;font-weight:700;color:#d4a900;">– Arjun Mehta</h4>
+      <p style="color:#f5a623;font-size:20px;">★★★★★</p>
+    </div>
+
+    <div style="padding:25px;border-radius:15px;background:linear-gradient(145deg,#fffde0,#fff9b0);box-shadow:0 4px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;animation:fadeUp 1.3s ease forwards;"
+         onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.boxShadow='0 12px 25px rgba(0,0,0,0.15)';" 
+         onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+      <p style="font-size:16px;color:#444;line-height:1.7;">“Loved how flexible their pickup options were. Excellent customer support and reliable service throughout.”</p>
+      <h4 style="margin-top:20px;font-size:18px;font-weight:700;color:#d4a900;">– Sneha Kapoor</h4>
+      <p style="color:#f5a623;font-size:20px;">★★★★★</p>
+    </div>
+  </div>
+
+  <h2 style="text-align:center;font-size:34px;margin-bottom:30px;text-transform:uppercase;animation:fadeUp 1.4s ease forwards;">Share Your Experience</h2>
+  <form action="submit_review.php" method="POST" style="max-width:600px;margin:0 auto;background:linear-gradient(145deg,#fffde0,#fff9b0);padding:35px;border-radius:20px;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.3s ease;animation:fadeUp 1.5s ease forwards;"
+        onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';">
+    <div style="margin-bottom:20px;">
+      <label style="display:block;font-weight:600;margin-bottom:8px;">Your Name</label>
+      <input type="text" name="name" placeholder="Enter your name" style="width:100%;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:15px;" required>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <label style="display:block;font-weight:600;margin-bottom:8px;">Email Address</label>
+      <input type="email" name="email" placeholder="Enter your email" style="width:100%;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:15px;" required>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <label style="display:block;font-weight:600;margin-bottom:8px;">Your Review</label>
+      <textarea name="message" rows="5" placeholder="Write your review here..." style="width:100%;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:15px;" required></textarea>
+    </div>
+
+    <div style="text-align:center;">
+      <button type="submit" style="background:#d4a900;color:#fff;padding:14px 35px;border:none;border-radius:30px;font-size:16px;font-weight:600;cursor:pointer;transition:all 0.3s ease;"
+              onmouseover="this.style.background='#ffdd33';this.style.color='#000';this.style.transform='scale(1.1)';"
+              onmouseout="this.style.background='#d4a900';this.style.color='#fff';this.style.transform='scale(1)';">
+        Submit Review
+      </button>
+    </div>
+  </form>
+</section>
+
+    <section class="banner__container">
+      <div class="banner__wrapper">
+        <img src="assets/banner-1.png" alt="banner" />
+        <img src="assets/banner-2.png" alt="banner" />
+        <img src="assets/banner-3.png" alt="banner" />
+        <img src="assets/banner-4.png" alt="banner" />
+        <img src="assets/banner-5.png" alt="banner" />
+        <img src="assets/banner-6.png" alt="banner" />
+        <img src="assets/banner-7.png" alt="banner" />
+        <img src="assets/banner-8.png" alt="banner" />
+        <img src="assets/banner-9.png" alt="banner" />
+        <img src="assets/banner-10.png" alt="banner" />
+      </div>
+    </section>
+
+<footer id="footer" style="background:linear-gradient(135deg,#fffcee,#e0f6df);padding:60px 20px;color:#222;position:relative;overflow:hidden;">
+  
+  <div class="footer-line" style="position:absolute;top:0;left:-100%;height:4px;background:linear-gradient(90deg,#f6e96b,#b5e7a0,#9ae49d);border-radius:4px;width:100%;animation:none;"></div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;max-width:1200px;margin:0 auto;position:relative;z-index:2;">
+    
+    <div class="footer-column">
+      <h3 class="footer-heading">Company</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Our Services</h3>
+      <ul>
+        <li><a href="#">Self-Drive Rentals</a></li>
+        <li><a href="#">Chauffeur Services</a></li>
+        <li><a href="#">Airport Transfers</a></li>
+        <li><a href="#">Luxury Cars</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Popular Locations</h3>
+      <ul>
+        <li><a href="#">Chhatrapati Shivaji Maharaj International Airport (BOM)</a></li>
+        <li><a href="#">Navi Mumbai</a></li>
+        <li><a href="#">Bandra</a></li>
+        <li><a href="#">Powai</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Contact Us</h3>
+      <p>📞 +91 77383 45673</p>
+      <p>✉️ kars.enterprise@hotmail.com</p>
+      <p>✉️ ks_subbu@hotmail.com</p>
+      <p>📍 C-703, Shiv Triveni Galleria Sec-08, Plot NO : 13 Sanpada, Navi Mumbai : 400705</p>
+      <p>⏰ Open 24/7</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom" style="text-align:center;margin-top:40px;border-top:1px solid rgba(0,0,0,0.1);padding-top:20px;font-size:14px;color:#555;position:relative;z-index:2;">
+    <span id="footerText" style="position:relative;display:inline-block;">KARS ENTERPRISE. All rights reserved.</span>
+    <span class="footer-arrow" style="display:inline-block;opacity:0;margin-left:8px;transition:all 0.4s ease;">➤</span>
+  </div>
+</footer>
+
+<style>
+  footer ul { list-style:none; padding:0; }
+  footer ul li { margin-bottom:8px; }
+  footer ul li a { text-decoration:none; color:#444; transition:color 0.3s; }
+  footer ul li a:hover { color:#5daa64; }
+  .footer-heading { font-size:20px;margin-bottom:15px;color:#5daa64; }
+  .footer-column { animation:fadeUp 1.2s ease forwards; }
+
+  /* Fade animation */
+  @keyframes fadeUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
+
+  /* Animated line effect */
+  @keyframes lineSlide {
+    from { left:-100%; opacity:0; }
+    50% { opacity:1; }
+    to { left:100%; opacity:0; }
+  }
+
+  /* Arrow fade/slide */
+  @keyframes arrowMove {
+    from { opacity:0; transform:translateX(-10px); }
+    to { opacity:1; transform:translateX(5px); }
+  }
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const footer = document.querySelector('#footer');
+    const line = document.querySelector('.footer-line');
+    const arrow = document.querySelector('.footer-arrow');
+    const text = document.querySelector('#footerText');
+    const rect = footer.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 100) {
+      line.style.animation = 'lineSlide 2.5s ease-out 1';
+      arrow.style.opacity = '1';
+      arrow.style.animation = 'arrowMove 1s ease-out forwards';
+      text.style.color = '#3c8c3c';
+    }
+  });
+</script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

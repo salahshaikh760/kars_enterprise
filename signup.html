@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KARS ENTERPRISE | Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* ===== Base Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      background: linear-gradient(135deg, #fffce6, #fff3d4, #ffebb0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      animation: fadeInBody 1.2s ease-in-out;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Container ===== */
+    .container {
+      width: 420px;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      padding: 50px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 1.4s ease;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at center, #ffd166, transparent);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .container::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at center, #f8b400, transparent);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    /* ===== Logo ===== */
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #222;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo span {
+      color: #f5b700;
+    }
+
+    /* ===== Title ===== */
+    h2 {
+      margin: 20px 0;
+      font-size: 22px;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== Inputs ===== */
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+      background: #fafafa;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    input:focus {
+      background: #fff;
+      border-color: #f5b700;
+      box-shadow: 0 0 8px rgba(245, 183, 0, 0.4);
+      outline: none;
+      transform: scale(1.02);
+    }
+
+    /* ===== Button ===== */
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      background: linear-gradient(90deg, #f5b700, #ffcc33);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(245, 183, 0, 0.4);
+    }
+
+    /* ===== Links ===== */
+    p {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+      position: relative;
+      z-index: 2;
+    }
+
+    a {
+      color: #f5b700;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #000;
+    }
+
+    /* ===== Floating Car Animation (Optional) ===== */
+    .car {
+      position: absolute;
+      bottom: -40px;
+      right: 20px;
+      width: 120px;
+      opacity: 0.2;
+      animation: carMove 6s linear infinite;
+    }
+
+    @keyframes carMove {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-15px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">KARS <span>ENTERPRISE</span></div>
+    <h2>Sign Up</h2>
+   <form action="signup.php" method="POST">
+  <input type="text" placeholder="Full Name" required name="fullname" />
+  
+  <input type="email" placeholder="Email Address" required name="email" />
+  
+  <input type="password" placeholder="Password" required name="password" />
+  
+  <input type="password" placeholder="Confirm Password" required name="confirm_password" />
+  
+  <button type="submit">Create Account</button>
+  <p>Already have an account? <a href="login.html">Login</a></p>
+</form>
+    <img src="assets/car.png" class="car" alt="car" />
+  </div>
+</body>
+</html>
+
