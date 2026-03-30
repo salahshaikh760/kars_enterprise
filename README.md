@@ -71,7 +71,7 @@ Installation
 
 Clone the repository:
 
-bash   git clone https://github.com/salahshaikh760/kars-enterprise.git
+bash   git clone https://github.com/salahshaikh760/kars_enterprise
 
 Move the project folder into your server's web root:
 
